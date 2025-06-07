@@ -16,3 +16,14 @@ class ContaBancaria:
     
     def depositar(self, valor):
         self.__saldo = self.__saldo + valor
+
+# criei uma classe herdando de outra
+class ContaCorrente(ContaBancaria):
+    def __init__(self, def_titular, def_saldo, limite):
+        super().__init__(def_titular, def_saldo)
+        self.limite = limite
+
+    # polimorfismo
+    def consultar_saldo(self):
+        super().consultar_saldo()
+        print(self.limite)
